@@ -21,8 +21,8 @@ fs.writeFile("readFile.json", jsonData, (err) => {
     console.log("Done")
 });
 
-fs.readFile("readFile.json", "utf8", (err, data) => {
-    console.log(data);
-    const orgData = JSON.parse(data);
+fs.readFile("readFile.json", "utf8", (err, mydata) => {
+    console.log(mydata);
+    const orgData = JSON.parse(mydata);
     console.log(orgData)
 })
