@@ -70,7 +70,16 @@ const createDocument = async()=>{
 
 const getDocument = async ()=>{
     try{
-        const result = await Playlist.find({ctype: "API"}, {name:1});
+        // const result = await Playlist.find({ctype: "API"}, {name:1});
+
+        //Comparison Operator
+        // const result = await Playlist
+        // .find({videos : {$gt: 20} && {$lt: 150}})
+
+        //Comparison Operator
+        const result = await Playlist
+        .find({ctype: {$in : ["Backend", "API"]}});
+
         console.log(result);
     }catch(err){
         console.log(err);
