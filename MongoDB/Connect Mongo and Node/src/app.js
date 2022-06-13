@@ -37,12 +37,30 @@ const createDocument = async()=>{
             author: "Omkar",
             active: true,
         });
+
+        const javascripttPlaylist = new Playlist({
+            name : "Omkar",
+            ctype: "Backend",
+            videos: 150,
+            author: "Omkar",
+            active: true,
+        });
+
+        const express = new Playlist({
+            name : "Omkar",
+            ctype: "API",
+            videos: 20,
+            author: "Omkar",
+            active: true,
+        });
         
-        const result = await reactPlaylist.save();
+        const result = await Playlist.insertMany([
+            reactPlaylist, javascripttPlaylist, express
+        ]);
         console.log(result);
     }catch(err){
         console.log(err);
-    };
+    }
 };
 
 createDocument();
