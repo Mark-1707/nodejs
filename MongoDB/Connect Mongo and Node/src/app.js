@@ -27,3 +27,22 @@ const playlistSchema = new mongoose.Schema({
 //Create Collection
 const Playlist = mongoose.model("Playlist", playlistSchema);
 
+
+const createDocument = async()=>{
+    try{
+        const reactPlaylist = new Playlist({
+            name : "Omkar",
+            ctype: "Backend",
+            videos: 80,
+            author: "Omkar",
+            active: true,
+        });
+        
+        const result = await reactPlaylist.save();
+        console.log(result);
+    }catch(err){
+        console.log(err);
+    };
+};
+
+createDocument();
