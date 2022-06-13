@@ -63,4 +63,18 @@ const createDocument = async()=>{
     }
 };
 
-createDocument();
+//createDocument();
+
+
+//Read Document
+
+const getDocument = async ()=>{
+    try{
+        const result = await Playlist.find({ctype: "API"}, {name:1});
+        console.log(result);
+    }catch(err){
+        console.log(err);
+    }
+};
+
+getDocument();
