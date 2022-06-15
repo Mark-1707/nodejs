@@ -25,7 +25,7 @@ const menSchema = new mongoose.Schema({
         required : true,
         trim: true
     },
-    
+     
     score: {
         type : Number,
         required : true,
